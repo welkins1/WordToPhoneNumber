@@ -1,6 +1,10 @@
-//
+//Programmer Name: Austin
+//GitHub Username: welkins1
+
+
 package wordtophonenumber;
 
+//Import for Scanner
 import java.util.Scanner;
 
 public class WordToPhoneNumber {
@@ -9,7 +13,7 @@ public class WordToPhoneNumber {
     public static void main(String[] args) {
         
         
-        
+        //ASCII art by Joan Stark via www.asciiart.eu/
         System.out.println("               _.===========================._\n" +
 "            .'`  .-  - __- - - -- --__--- -.  `'.\n" +
 "        __ / ,'`     _|--|_________|--|_     `'. \\\n" +
@@ -27,27 +31,47 @@ public class WordToPhoneNumber {
 "(\\)_._._.__(\\)    |                       |\n" +
 " (\\\\\\\\jgs\\\\\\)      '.___________________.'\n" +
 "  '-'-'-'--'");
-        
+
+        //Program info
         System.out.println("\nThis program allows you to translate a word to a standard letter mapping found "
                 + "on a telephone.\n");
-        
+
+        //Creates scanner object
         Scanner input = new Scanner(System.in);
-        
+
+        //Declaring the boolean variable used for restarting the program
         boolean Restart = false;
-        
+
+        //While loop used for restarting the program at this point
        while   (!Restart) {
-        
+
+           //Word prompt statement
         System.out.print("\nEnter a word: ");
+
+           
+           
+        
+            
+           /* Input is converted to UpperCase to be less precise for 
+           a later nested-if statement */ 
+           
       String Word = input.next().toUpperCase();
-      
+
+         
+
+  //This is the string that is going to be displayed as the translated result              
       String phoneNumber = "";
       
-      
+
+//For-loop used for reading each character based on the length of the word
         for (int i = 0; i < Word.length(); i++) {
-            char letter =  Word.charAt(i);
+            char letter =  Word.charAt(i); 
+//CharAt is cycled thorugh each char of the string based on i
             
+//If statement used for translating each char from the word to a number
             if (Character.isLetter(letter)) {
-                
+
+                //Middle letter of each set of letters can be skipped
                 if (letter >= 'A' && letter <= 'C') {
                     phoneNumber +=2;
                 } else if (letter >= 'D' && letter <= 'F') {
@@ -66,6 +90,8 @@ public class WordToPhoneNumber {
                     phoneNumber +=9;
                 } 
             } else {
+                
+    //If a non-word is inputted, it is displayed normally and isn't translated
                 phoneNumber += letter;
                    
                 
@@ -77,21 +103,25 @@ public class WordToPhoneNumber {
                
              
         }
-        
+
+           //Result statement
         System.out.println("\nThe phone letter mapping for  \"" + Word + "\"" + " is " + phoneNumber);
        
         
-        
+        //Re-do input statement
            System.out.print("\nWould you like to enter another word? Y/N ");
+
+           //Declaring YesNo for restart/re-do program input
            String YesNo = input.next();
            
          
-           
+           //While statement used for invalid input within YesNo input 
            while (!YesNo.equalsIgnoreCase("Y") && !YesNo.equalsIgnoreCase("N")) {
                System.out.print("Invalid input, please type Y or N ");
                YesNo = input.next();
            }
-           
+
+  //If N is entered into input, while loop Restart is set to true and doesn't loop
            if (YesNo.equalsIgnoreCase("N")) {
                System.out.println("\nThanks for using the program! ☺\n");
                Restart = true;
