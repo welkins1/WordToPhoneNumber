@@ -104,6 +104,27 @@ public class WordToPhoneNumber {
              
         }
 
+           //Sout used to simulate loading 
+            System.out.print("\nTranslating");
+
+           //Loading simulation lopop
+        for (int i = 0; i < 5; i++) {
+
+                //The try-catch is required to use Thread.sleep
+                try {
+                    //Loading time in miliseconds
+                    Thread.sleep(500);
+                    //printed to the console based on i < 5
+                    System.out.print(".");
+
+                } catch (InterruptedException error) {
+
+                }
+
+            }
+            //Spacer
+           System.out.println("");
+
            //Result statement
         System.out.println("\nThe phone letter mapping for  \"" + Word + "\"" + " is " + phoneNumber);
        
