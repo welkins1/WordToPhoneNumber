@@ -1,9 +1,6 @@
 //Programmer Name: Austin
 //GitHub Username: welkins1
 
-
-package wordtophonenumber;
-
 //Import for Scanner
 import java.util.Scanner;
 
