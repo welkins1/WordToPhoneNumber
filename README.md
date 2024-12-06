@@ -1,4 +1,4 @@
-# WordToPhoneNumber
+# WordToPhoneNumber ☎️
 
 This basic program allows you to translate a word to the corresponding numbers on a telephone.
 
